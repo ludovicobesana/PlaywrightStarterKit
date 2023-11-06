@@ -41,7 +41,7 @@ body:
       label: "Willing to Contribute?"
       description: "Would you be willing to contribute this feature yourself?"
       options:
-        - "Yes"
-        - "No"
+        - label: "Yes"
+        - label: "No"
     validations:
       required: false
