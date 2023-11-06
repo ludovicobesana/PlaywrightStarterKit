@@ -1,0 +1,49 @@
+name: "Feature Request"
+description: "Propose a new feature"
+title: "[Feature]: "
+labels:
+  - "feature"
+  - "enhancement"
+body:
+  - type: "markdown"
+    attributes:
+      value: |
+        Thanks for taking the time to propose a new feature!
+
+  - type: "textarea"
+    id: "feature-description"
+    attributes:
+      label: "Feature Description"
+      description: "Describe the feature you'd like to see added, and why."
+      placeholder: "Describe your feature here."
+    validations:
+      required: true
+
+  - type: "textarea"
+    id: "benefits"
+    attributes:
+      label: "Benefits"
+      description: "Explain the benefits this feature will bring."
+      placeholder: "Describe the benefits."
+    validations:
+      required: true
+
+  - type: "textarea"
+    id: "alternatives"
+    attributes:
+      label: "Alternative Solutions"
+      description: "Are there any alternative solutions or features you've considered?"
+      placeholder: "Describe alternative solutions."
+    validations:
+      required: false
+
+  - type: "checkbox"
+    id: "willing-to-contribute"
+    attributes:
+      label: "Willing to Contribute?"
+      description: "Would you be willing to contribute this feature yourself?"
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: false

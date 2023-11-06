@@ -1,0 +1,12 @@
+{
+  "name": "PlaywrightStarterKit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ludovicobesana/PlaywrightStarterKit.git",
+  "author": "ludovicobesana <ludovicobesanaguide@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.10"
+  }
+}
