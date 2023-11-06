@@ -37,7 +37,7 @@ body:
     validations:
       required: false
 
-  - type: "checkbox"
+  - type: "checkboxes"
     id: "willing-to-contribute"
     attributes:
       label: "Willing to Contribute?"
