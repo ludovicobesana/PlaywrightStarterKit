@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 import { LoginPage } from "@pages/login.page";
 
 export default class LoginSteps {
@@ -15,6 +15,7 @@ export default class LoginSteps {
   }
 
   async checkUsernameErrorMessage() {
-    await this.loginPage.getLoginButton().click();
+    await expect.soft(this.loginPage.getError()).toBeVisible();
+    await expect(this.loginPage.getError()).toContainText("Epic sadface: Username is required");
   }
 }

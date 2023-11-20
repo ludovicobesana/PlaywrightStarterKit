@@ -11,4 +11,7 @@ export class LoginPage {
   public getLoginButton(): Locator {
     return this.page.locator(selectors.LoginPage.loginButton);
   }
+  public getError(): Locator {
+    return this.page.locator(selectors.LoginPage.errorMessage);
+  }
 }

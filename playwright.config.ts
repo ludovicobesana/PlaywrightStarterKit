@@ -42,34 +42,33 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
+      grep: /@Desktop/,
+      grepInvert: /@Mobile/,
     },
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
+      grep: /@Desktop/,
+      grepInvert: /@Mobile/,
     },
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
+      grep: /@Desktop/,
+      grepInvert: /@Mobile/,
+    },
+    {
+      name: "mobile-chrome",
+      use: { ...devices["Pixel 5"] },
+      grep: /@Mobile/,
+      grepInvert: /@Desktop/,
     },
     {
       name: "mobile-safari",
       use: { ...devices["iPhone 12"] },
+      grep: /@Mobile/,
+      grepInvert: /@Desktop/,
     },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
   /* Run your local dev server before starting the tests */
