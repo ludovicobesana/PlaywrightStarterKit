@@ -1,5 +1,5 @@
 {
-  "name": "PlaywrightStarterKit",
+  "name": "playwright-starter-kit",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:ludovicobesana/PlaywrightStarterKit.git",
@@ -7,6 +7,22 @@
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.39.0",
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.0",
+    "prettier": "3.1.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "test": "ENV=$npm_config_ENV playwright test",
+    "prepare": "husky install",
+    "ui": "npx playwright test --ui",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write"
   }
 }

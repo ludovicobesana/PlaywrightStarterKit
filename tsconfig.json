@@ -1,0 +1,15 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["services/pages/*"],
+      "@steps/*": ["services/steps/*"],
+      "@test-data/*": ["services/test-data/*"],
+      "@selectors/*": ["./selectors.json"]
+    }
+  }
+}
