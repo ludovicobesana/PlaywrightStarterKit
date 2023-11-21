@@ -34,5 +34,8 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
