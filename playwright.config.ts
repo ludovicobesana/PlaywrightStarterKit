@@ -24,6 +24,10 @@ export default defineConfig({
 
   projects: [
     {
+      name: "api",
+      grep: [/@api/, /@Api/, /@API/],
+    },
+    {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
       grep: /@Desktop/,
