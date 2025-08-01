@@ -6,7 +6,7 @@
   "author": "ludovicobesana <ludovicobesanaguide@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.39.0",
+    "@playwright/test": "^1.54.2",
     "@types/node": "^20.8.10",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
@@ -17,17 +17,18 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "ENV=$npm_config_ENV playwright test",
-    "test:chrome": "ENV=$npm_config_ENV playwright test --project=chromium",
-    "test:debug": "ENV=$npm_config_ENV playwright test --debug",
-    "test:headed": "ENV=$npm_config_ENV playwright test --headed",
-    "test:headed:debug": "ENV=$npm_config_ENV playwright test --headed --debug",
-    "desktop": "ENV=$npm_config_ENV playwright test --grep @desktop",
-    "mobile": "ENV=$npm_config_ENV playwright test --grep @mobile",
-    "desktop:atomic": "ENV=$npm_config_ENV playwright test --grep @desktop --grep @atomic",
-    "mobile:atomic": "ENV=$npm_config_ENV playwright test --grep @mobile --grep @atomic",
-    "desktop:flow": "ENV=$npm_config_ENV playwright test --grep @desktop --grep @flow",
-    "mobile:flow": "ENV=$npm_config_ENV playwright test --grep @mobile --grep @flow",
+    "pw": "ENV=${npm_config_ENV:-dev} playwright test",
+    "test": "npm run pw",
+    "test:chrome": "npm run pw -- --project=chromium",
+    "test:debug": "npm run pw -- --debug",
+    "test:headed": "npm run pw -- --headed",
+    "test:headed:debug": "npm run pw -- --headed --debug",
+    "desktop": "npm run pw -- --grep @desktop",
+    "mobile": "npm run pw -- --grep @mobile",
+    "desktop:atomic": "npm run pw -- --grep @desktop --grep @atomic",
+    "mobile:atomic": "npm run pw -- --grep @mobile --grep @atomic",
+    "desktop:flow": "npm run pw -- --grep @desktop --grep @flow",
+    "mobile:flow": "npm run pw -- --grep @mobile --grep @flow",
     "prepare": "husky install",
     "ui": "npx playwright test --ui",
     "lint": "eslint .",
@@ -37,5 +38,6 @@
   },
   "dependencies": {
     "dotenv": "^16.3.1"
-  }
+  },
+  "packageManager": "yarn@4.8.0+sha512.85ec3149b1ec48f47c2690e13b29197a8a84b09c2c936cc596dddfb49c517e3bc3b1881ec52b5d35ca4b7c437c3f0daae3a80e39438c93bbcc5fcece2df5f15a"
 }
