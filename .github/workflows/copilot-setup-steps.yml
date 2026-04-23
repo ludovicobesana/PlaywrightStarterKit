@@ -17,18 +17,26 @@ jobs:
       contents: read
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Enable Corepack
+        run: corepack enable
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      - name: Install dependencies
+        run: yarn install --immutable
 
-    # Customize this step as needed
-    - name: Build application
-      run: npx run build
+      - name: Install Playwright Browsers
+        run: yarn exec playwright install --with-deps
+
+      # Customize this step as needed
+      - name: Build application
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then
+            yarn build
+          else
+            echo "No build script configured. Skipping build step."
+          fi
